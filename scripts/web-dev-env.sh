@@ -1,6 +1,6 @@
-!/bin/bash
+#!/bin/bash
 
-code & 
-google-chrome &
+open -na "Visual Studio Code" --args --new-window & 
+open -na "Google Chrome" --args --new-window
 
 
