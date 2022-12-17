@@ -1,9 +1,15 @@
 #!/bin/bash
 
-USERNAME=$(whoami)
+user=$(whoami)
 
-PIDS=$(ps -u $USERNAME -o pid=)
+processes=$(ps -u $user -o pid=)
 
-for PID in $PIDS; do
-  kill -9 $PID
+for pid in $processes
+do
+  cmd=$(ps -p $pid -o comm=)
+
+  if [[ "$cmd" != *"Alfred"* ]] && [[ "$cmd" != *"Rectangle"* ]]  && [[ "$cmd" != *"Flux"* ]]; then
+    kill $pid
+  fi
 done
+
