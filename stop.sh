@@ -1,9 +1,9 @@
 #!/bin/bash
 
-processes=$(ps aux)
+USERNAME=$(whoami)
 
-while read -r line; do
-  pid=$(echo $line | awk '{print $2}')
+PIDS=$(ps -u $USERNAME -o pid=)
 
-  kill -9 $pid
-done <<< "$processes"
+for PID in $PIDS; do
+  kill -9 $PID
+done
