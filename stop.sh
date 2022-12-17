@@ -13,3 +13,4 @@ do
   fi
 done
 
+/bin/bash scripts/remove-dock.sh
