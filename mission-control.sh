@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Open Terminal with "Kazi (prod)" profile
-osascript -e 'tell application "Terminal" to do script with profile name "Kazi (prod)"'
+# you have to define the paths
 
-# Open Terminal with "Kazi (~)" profile
-osascript -e 'tell application "Terminal" to do script with profile name "Kazi (~)"'
+# Open Chrome with "Kazi (prod)" profile
+open -a "Google Chrome" --args --profile-directory="Default"
+
+# Open Chrome with "Kazi (~)" profile
+open -a "Google Chrome" --args --profile-directory="Profile 1"
